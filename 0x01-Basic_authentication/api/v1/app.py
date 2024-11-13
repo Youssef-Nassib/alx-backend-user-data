@@ -26,7 +26,7 @@ def not_found(error) -> str:
 def Unauthorized(error) -> tuple[str, Literal[401]]:
     """request unauthorized
     """
-    return jsonify({"error": "Unauthorized"}), 401
+    return jsonify({"error": "unauthorized"}), 401
 
 
 if __name__ == "__main__":
