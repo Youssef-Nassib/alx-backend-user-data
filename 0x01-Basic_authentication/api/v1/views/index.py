@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+ #!/usr/bin/env python3
 """ Module of Index views
 """
 from flask import jsonify, abort, Blueprint
@@ -8,7 +8,7 @@ app_views = Blueprint("app_views", __name__, url_prefix="/api/v1")
 
 
 @app_views.route('/status', methods=['GET'], strict_slashes=False)
-def status() -> str:
+def status():
     """ GET /api/v1/status
     Return:
       - the status of the API
@@ -17,7 +17,7 @@ def status() -> str:
 
 
 @app_views.route('/stats/', strict_slashes=False)
-def stats() -> str:
+def stats():
     """ GET /api/v1/stats
     Return:
       - the number of each objects
@@ -29,6 +29,7 @@ def stats() -> str:
 
 
 @app_views.route("/unauthorized", methods=["GET"])
-def unauthorized() -> str:
+def unauthorized():
     """ Endpoint to test 401 error handler"""
+    print("Unauthorized route was called!")
     abort(401)
