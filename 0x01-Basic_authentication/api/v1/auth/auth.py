@@ -3,11 +3,13 @@
 """
 from flask import request
 from typing import List, TypeVar
-
+import fnmatch
 User = TypeVar('User')
 
 
 class Auth:
+    """Authentication Class
+    """
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """
         Determines if authentication is required for a given path.
