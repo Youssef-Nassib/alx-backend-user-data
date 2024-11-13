@@ -15,9 +15,9 @@ class Auth:
         """
         if path is None or excluded_paths is None or excluded_paths == []:
             return True
-        
+
         l_path = len(path)
-        
+
         if l_path == 0:
             return True
 
@@ -26,7 +26,7 @@ class Auth:
         tmp_path = path
         if not slash_path:
             tmp_path += '/'
-            
+
         for exc in excluded_paths:
             l_exc = len(exc)
             if l_exc == 0:
@@ -36,8 +36,8 @@ class Auth:
                 if tmp_path == exc:
                     return False
             else:
-                    if exc[:-1] == path[:l_exc - 1]:
-                        return False
+                if exc[:-1] == path[:l_exc - 1]:
+                    return False
 
         return True
 
