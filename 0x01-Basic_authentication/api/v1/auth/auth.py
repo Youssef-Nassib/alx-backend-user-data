@@ -4,7 +4,6 @@
 from flask import request
 from typing import List, TypeVar
 import fnmatch
-User = TypeVar('User')
 
 
 class Auth:
@@ -13,12 +12,6 @@ class Auth:
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """
         Determines if authentication is required for a given path.
-        Args:
-            path (str): The path to check.
-            excluded_paths (List[str]): A list of paths
-            that do not require authentication.
-        Returns:
-            bool: returns False "not execluded_paths=len(excluded_paths)=0.
         """
         if path is None:
             return True
