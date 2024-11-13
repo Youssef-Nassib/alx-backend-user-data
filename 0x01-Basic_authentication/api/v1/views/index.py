@@ -28,8 +28,7 @@ def stats() -> str:
     return jsonify(stats)
 
 
-@app_views.route("/unauthorized", methods=["GET"])
-def unauthorized():
-    """ Endpoint to test 401 error handler"""
-    print("Unauthorized route was called!")
+@app_views.route('/unauthorized/', methods=['GET'], strict_slashes=False)
+def test_unauthorized():
+    """Endpoint to test 401 error handler."""
     abort(401)
